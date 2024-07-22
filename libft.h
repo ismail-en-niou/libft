@@ -26,5 +26,11 @@ int		ft_isprint(int i);
 char	*ft_itoa(int n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memmove(void *s1, const void *s2, size_t n);
+void	ft_putchar_fd(char c, int fd);
 int		ft_isalnum(int i);
+int		ft_toupper(int i);
+int		ft_tolower(int i);
+int		ft_strlen(char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 #endif
