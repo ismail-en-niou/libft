@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/31 21:39:13 by marvin            #+#    #+#             */
-/*   Updated: 2024/08/31 21:39:13 by marvin           ###   ########.fr       */
+/*   Created: 2024/08/31 21:45:50 by marvin            #+#    #+#             */
+/*   Updated: 2024/08/31 21:45:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_strdel(char **as)
 {
-	return ((char *)ft_memalloc((size + 1) * sizeof(char)));
+	ft_memdel((void **)p);
 }
