@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 15:02:47 by marvin            #+#    #+#             */
-/*   Updated: 2024/08/21 15:02:47 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/04 14:05:10 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/04 14:05:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strcpy(char *dest, const char *src)
+int	ft_isspace(int c)
 {
-	int		i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest);
+	return (c == ' ' || (c >= 0x09 && c <= 0x0d));
 }

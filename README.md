@@ -1,4 +1,4 @@
-# Libft - mhurd
+# Libft - ismail-en-niou
 Another implementation of several Standard C Library, plus some extras.
 
 ## TOC

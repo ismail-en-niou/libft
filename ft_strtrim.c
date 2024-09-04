@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 15:02:47 by marvin            #+#    #+#             */
-/*   Updated: 2024/08/21 15:02:47 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/04 14:01:46 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/04 14:01:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strtrim(char const *s)
 {
-	int		i;
+	size_t	start;
+	size_t	end;
+	char	*trimmed;
 
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest);
+	if (!s)
+		return (NULL);
+	start = 0;
+	while (s[start] && ft_isspace(s[start]))
+		start++;
+	end = ft_strlen(s);
+	while (end > start && ft_isspace(s[end - 1]))
+		end--;
+	trimmed = ft_substr(s, start, end - start);
+	return (trimmed);
 }

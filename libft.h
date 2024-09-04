@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 12:18:00 by marvin            #+#    #+#             */
-/*   Updated: 2024/08/21 12:18:00 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/04 14:37:57 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/04 14:37:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char			*ft_strrev(char *str);
 void			*ft_realloc(void *src, size_t srcsize, size_t newsize);
 char			*ft_strcjoin(char *delim, char **arr, size_t size);
 void			ft_printjoin(char *delim, char **arr, size_t size);
-int				ft_strcmp(const char *s1, const char *s2, size_t n);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 /*
 ** Conversions

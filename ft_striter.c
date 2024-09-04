@@ -21,7 +21,7 @@ void	ft_striter(char *s, void (*f)(char *))
 		return ;
 	while (s[i])
 	{
-		s[i] = f(s[i]);
+		f(&s[i]);  // Pass the address of the character
 		i++;
 	}
 }
