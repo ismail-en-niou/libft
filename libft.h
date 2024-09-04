@@ -93,6 +93,7 @@ char			*ft_strrev(char *str);
 void			*ft_realloc(void *src, size_t srcsize, size_t newsize);
 char			*ft_strcjoin(char *delim, char **arr, size_t size);
 void			ft_printjoin(char *delim, char **arr, size_t size);
+int				ft_strcmp(const char *s1, const char *s2, size_t n);
 
 /*
 ** Conversions
