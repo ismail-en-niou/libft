@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 13:43:33 by marvin            #+#    #+#             */
-/*   Updated: 2024/09/04 13:43:33 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/04 15:01:00 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/04 15:01:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*ret;
+	char	*joined;
+	size_t	len1;
+	size_t	len2;
 
 	if (!s1 || !s2)
 		return (NULL);
-	ret = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!ret)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	joined = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!joined)
 		return (NULL);
-	ft_strcpy(ret, s1);
-	return (ft_strcpy(ret, s2));
+	ft_memcpy(joined, s1, len1);
+	ft_memcpy(joined + len1, s2, len2 + 1);
+	return (joined);
 }
