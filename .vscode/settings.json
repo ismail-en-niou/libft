@@ -3,6 +3,7 @@
     "files.associations": {
         "*.ejs": "html",
         "stdlib.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "cstdlib": "c"
     }
 }

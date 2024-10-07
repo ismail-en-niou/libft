@@ -1,39 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 14:45:23 by marvin            #+#    #+#             */
-/*   Updated: 2024/09/04 14:45:23 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/21 19:34:30 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/21 19:34:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	talis(int n)
 {
-	char	*substr;
-	size_t	s_len;
-	size_t	i;
+	int		i;
+	long	x;
 
-	if (!s)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	i = 0;
-	while (i < len && s[start + i])
+	x = n;
+	i = 1;
+	if (x < 0)
 	{
-		substr[i] = s[start + i];
+		i++;
+		x *= -1;
+	}
+	while (n > 9)
+	{
+		x = x / 10;
 		i++;
 	}
-	substr[i] = '\0';
-	return (substr);
+	return (i);
+}
+
+char	*ft_itoa(int x)
+{
+	int		len;
+	char	*res;
+	int		sign;
+	long	n;
+
+	n = x;
+	len = talis(n);
+	sign = 0;
+	if (n < 0)
+	{
+		sign = 1;
+		n = -n;
+	}
+	res = ft_strnew(len);
+	if (!res)
+		return (NULL);
+	if (sign)
+		res[0] = '-';
+	while (len-- > sign)
+	{
+		res[len] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (res);
 }

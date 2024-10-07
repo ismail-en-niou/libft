@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 14:45:23 by marvin            #+#    #+#             */
-/*   Updated: 2024/09/04 14:45:23 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/18 15:30:07 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/18 15:30:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	*ft_realloc(void *src, size_t srcsize, size_t newsize)
 {
-	char	*substr;
-	size_t	s_len;
-	size_t	i;
+	void	*ret;
 
-	if (!s)
+	if (!src)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (len > s_len - start)
-		len = s_len - start;
-	substr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	i = 0;
-	while (i < len && s[start + i])
-	{
-		substr[i] = s[start + i];
-		i++;
-	}
-	substr[i] = '\0';
-	return (substr);
+	ret = ft_memalloc(newsize);
+	ft_memcpy(ret, src, MIN(srcsize, newsize));
+	free(src);
+	return (ret);
 }

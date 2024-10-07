@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-
+# define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
 typedef unsigned char	t_byte;
 /*
 ** what it is
@@ -44,6 +44,8 @@ void			*ft_memcpy(void *dest, const void *src, size_t num);
 void			ft_memdel(void **ap);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
+size_t          ft_strlcpy(char *dst, const char *src, size_t dstsize);
+
 
 /*
 ** Putin
